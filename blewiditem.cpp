@@ -9,12 +9,12 @@ BleWidItem::BleWidItem(QWidget *parent) :
 
 
     this->btn_Name = ui->btn_name;
-    this->btn_Addr = ui->btn_Addr;
+    this->Box_Uuid = ui->comboBox;
     this->btn_Rssi = ui->btn_Rssi;
 
 
     connect(ui->btn_name,SIGNAL(clicked()),this,SLOT(on_btnclick()));
-    connect(btn_Addr,SIGNAL(clicked()),this,SLOT(on_btnclick()));
+    connect(Box_Uuid,SIGNAL(currentIndexChanged(int)),this,SLOT(on_BoxUidChanged(int)));
     connect(btn_Rssi,SIGNAL(clicked()),this,SLOT(on_btnclick()));
 }
 
@@ -26,4 +26,11 @@ BleWidItem::~BleWidItem()
 void BleWidItem::on_btnclick()
 {
     emit emit_send(index);
+}
+
+void BleWidItem::on_BoxUidChanged(int index)
+{
+    Q_UNUSED(index)
+    QString uuid = Box_Uuid->currentText();
+    emit BoxUidChanged(uuid);
 }

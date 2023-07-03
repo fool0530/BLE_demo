@@ -13,21 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QHBoxLayout" name="horizontalLayout_2">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
-     <property name="spacing">
-      <number>0</number>
-     </property>
-     <property name="leftMargin">
-      <number>0</number>
-     </property>
-     <property name="topMargin">
-      <number>2</number>
-     </property>
-     <property name="bottomMargin">
-      <number>2</number>
-     </property>
      <item>
       <widget class="QPushButton" name="btn_name">
        <property name="text">
@@ -36,14 +24,16 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_Addr">
-       <property name="text">
-        <string>地址</string>
-       </property>
-      </widget>
+      <widget class="QComboBox" name="comboBox"/>
      </item>
      <item>
       <widget class="QPushButton" name="btn_Rssi">
+       <property name="maximumSize">
+        <size>
+         <width>60</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
         <string>信号强度</string>
        </property>

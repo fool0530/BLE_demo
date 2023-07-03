@@ -5,6 +5,7 @@
 
 #include <QWidget>
 #include<QPushButton>
+#include<QComboBox>
 
 namespace Ui {
 class BleWidItem;
@@ -19,17 +20,22 @@ public:
     ~BleWidItem();
 
     QPushButton *btn_Name;
-    QPushButton *btn_Addr;
+    QComboBox *Box_Uuid;
     QPushButton *btn_Rssi;
 
     int index = 0;
 
+
+
 private slots:
     void on_btnclick();
+
+    void on_BoxUidChanged(int index);
 
 
 signals:
     void emit_send(int);
+    void BoxUidChanged(QString uuid);
 
 private:
 
